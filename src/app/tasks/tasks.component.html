@@ -1,0 +1,10 @@
+<div class="text-center">
+    <h1>Welcome to <b style="color:  #287FE6;">TASKS</b> Space</h1>
+</div>
+<app-task-add-form (sendTask)="addTask($event)" [user]="user"></app-task-add-form>
+
+<app-task-multi-critere (sendFinalCriteria)="search($event)"></app-task-multi-critere>
+
+<div class="row">
+    <app-task-card *ngFor="let t of tasksList" [task]="t" class="mx-2 my-2"></app-task-card>
+</div>

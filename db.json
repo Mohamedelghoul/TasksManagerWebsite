@@ -1,0 +1,118 @@
+{
+  "Users": [
+    {
+      "id": 1,
+      "username": "sdff",
+      "password": "sdfsdfsdf",
+      "firstName": "sfdsfsdf",
+      "lastName": "sdfsdf",
+      "email": "sdfsdf@sdfsdf.ff",
+      "cin": 11111111
+    },
+    {
+      "id": 2,
+      "username": "sdfsdf",
+      "password": "sdfsdfddd",
+      "firstName": "dsfsdf",
+      "lastName": "",
+      "email": "sdfsdfsdf@fsdfsdf.ff",
+      "cin": 11111111
+    },
+    {
+      "id": 3,
+      "username": "sdfsdf",
+      "password": "sdfsdfsdsf",
+      "firstName": "sdfsfsf",
+      "lastName": "sdfsdfsdf",
+      "email": "sdfsdfsdf@fsdfsdf.sdf",
+      "cin": 11111111
+    },
+    {
+      "id": 4,
+      "username": "Mohamedelghoul8",
+      "password": "mohamed12345",
+      "firstName": "Mohamed",
+      "lastName": "El Ghoul",
+      "email": "mohamed.elghoul@ieee.org",
+      "cin": 11111111
+    },
+    {
+      "id": 6,
+      "username": "sdfsdfsdf",
+      "password": "dsfsdfsdf",
+      "firstName": "sdfsdf",
+      "lastName": "sdfsdfsdf",
+      "email": "sdfsdf@sdfsdf.sdf",
+      "phoneNumber": 12345678,
+      "cin": 12345789
+    },
+    {
+      "id": 7,
+      "username": "gffdggf",
+      "password": "dfgfdgfdg",
+      "firstName": "dfgdgdfg",
+      "lastName": "fdgfgdf",
+      "email": "fdgdfgdf@fdgfdg.dfg",
+      "phoneNumber": 52598118,
+      "cin": 12356786
+    }
+  ],
+  "Tasks": [
+    {
+      "title": "EDITED",
+      "description": "EDITED",
+      "deadline": "02-02-2021",
+      "status": "Not Done Yet",
+      "userId": 4,
+      "id": 1
+    },
+    {
+      "title": "sdfsdfsdfsfsdf",
+      "description": "sdfsdfsdf",
+      "deadline": "01-05-2322",
+      "status": "Done",
+      "userId": 4,
+      "id": 3
+    },
+    {
+      "id": 6,
+      "title": "ggfdg",
+      "description": "gfdgfdg",
+      "deadline": "20-02-2021",
+      "userId": 4,
+      "status": "Done"
+    },
+    {
+      "id": 7,
+      "title": "dfgfdg",
+      "description": "fdgfdg",
+      "deadline": "20-22-2222",
+      "userId": 4,
+      "status": "Not Done Yet"
+    },
+    {
+      "id": 8,
+      "title": "sdfsdf",
+      "description": "sdfsf",
+      "deadline": "22-22-2222",
+      "userId": 4,
+      "status": "Not Done Yet"
+    },
+    {
+      "id": 9,
+      "title": "edited",
+      "description": "sdfsdf",
+      "deadline": "00-00-0000",
+      "userId": 4,
+      "status": "Done"
+    },
+    {
+      "id": 10,
+      "title": "sdfsdfsdf",
+      "description": "sdfsdfsdf",
+      "deadline": "20-01-2021",
+      "userId": 2,
+      "status": "Not Done Yet"
+    }
+  ]
+}

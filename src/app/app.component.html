@@ -1,0 +1,64 @@
+<div *ngIf="!loginState()">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="../assets/tasks.png" style="size: 20px;"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" routerLink="Home"><b>Home</b> <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="Contact-Us"><b>Contact Us</b></a>
+        </li>
+      </ul>
+  
+      <form class="form-inline my-2 my-lg-0">
+        <a routerLink="SignUp"><button type="button" class="btn btn-outline-secondary my-2 my-sm-0 mr-2" >Sign Up</button></a>    
+        <a routerLink="SignIn"><button type="button" class="btn btn-outline-primary">Sign In</button></a>
+      </form>
+    </div>
+  </nav>
+</div>
+
+
+<div *ngIf="loginState()">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="../assets/tasks.png" style="size: 20px;"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" routerLink="Home"><b>Home</b> <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item ">
+          <a class="nav-link" routerLink="MyProfile"><b>Profile</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="MyTasks"><b>Tasks</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="Contact-Us"><b>Contact Us</b></a>
+        </li>
+      </ul>
+  
+      <form class="form-inline my-2 my-lg-0">
+        <p class="my-2 my-sm-0 mr-4">Welcome Sir, <a routerLink="MyProfile"><b>{{user.firstName}} {{user.lastName}}</b></a></p>
+        <a routerLink="SignIn"><button type="button" class="btn btn-outline-secondary" (click)="logOut()">Sign Out</button></a>
+      </form>
+    </div>
+  </nav>
+</div>
+
+
+<div class="container mt-5">
+  <router-outlet></router-outlet>
+</div>
+<footer>
+  <div class="left"><h6> <span>&#169;</span> All Rights Reserved. </h6></div>
+  <div class="right"><h6><img src="../assets/tasks.ico" class="footerimg">is an 'Angular Mini Project'</h6></div>
+</footer>

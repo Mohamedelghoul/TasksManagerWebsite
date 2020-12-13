@@ -1,0 +1,23 @@
+<div class="text-center">
+    <h1 class="mb-5">Detail of <b style="color:  #287FE6;">NUMBER {{task.id}}</b> Task</h1>
+    <h3>Task Title : <span style="font-weight: lighter;"> {{task.title}}</span></h3>
+    <div class="ml-5">
+        <h5>Task Description : <span style="font-weight: lighter;"> {{task.description}}</span></h5>
+        <h5>Task Deadline : <span style="font-weight: lighter;"> {{task.deadline}}</span></h5>
+        <h5>Task Status : <span style="font-weight: lighter;"> {{task.status}}</span></h5>
+    </div>
+    <div class="row align-items-center my-5">
+        <div class="col">
+          <button class="btn btn-danger" (click)="deleteTask()">Delete Task</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-warning" (click)="showForm()">Edit Task</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-success" (click)="makeTaskDoneUndone()">Make Task <span *ngIf="task.status =='Not Done Yet'">Done</span><span *ngIf="task.status =='Done'">Undone</span></button>
+        </div>
+    </div>
+</div>
+
+<app-task-edit-form *ngIf="showFormVariable" [chosenTaskId]="chosenTaskId" [task]="task" (hideEditForm)="showForm()"></app-task-edit-form>
+

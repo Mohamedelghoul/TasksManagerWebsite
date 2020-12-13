@@ -1,0 +1,18 @@
+<div class="text-center" >  
+    <h1 class="mb-5" style="font-weight: bolder;">Welcome to Your Profile</h1>
+    <h4>Username : <span style="font-weight: lighter;">{{user.username}}</span></h4>
+    <h4>First Name : <span style="font-weight: lighter;">{{user.firstName}}</span></h4>
+    <h4>Last Name : <span style="font-weight: lighter;"><span *ngIf="user.lastName!=null">{{user.lastName}}</span ><span *ngIf="user.lastName==null">--</span></span></h4>
+    <h4>Email : <span style="font-weight: lighter;">{{user.email}}</span></h4>
+    <h4>Cin : <span style="font-weight: lighter;">{{user.cin}}</span></h4>
+    <h4>Phone Number : <span style="font-weight: lighter;"><span *ngIf="user.phoneNumber!=null">{{user.phoneNumber}}</span ><span *ngIf="user.phoneNumber==null">--</span></span></h4>
+   
+    <div class="row d-flex justify-content-center my-5">
+        <div class="col-md-6 my-3">
+            <button class="btn btn-danger mx-3" (click)="deleteUser()">Delete Account</button>
+            <button class="btn btn-warning mx-3" (click)="showEditUserForm()">Edit Account</button>
+        </div>
+    </div>
+
+    <app-edit-user-form [user]="user" *ngIf="showEditFormVariable" (hideEditForm)="showEditUserForm()"></app-edit-user-form>
+</div>

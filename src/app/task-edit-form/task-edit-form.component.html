@@ -1,0 +1,35 @@
+<div class="row d-flex justify-content-center my-5">
+    <div class="col-md-6 my-3">
+        <form [formGroup]="EditTaskRegisterForm">
+            <div class="form-group">
+                <label style="font-weight: bolder; font-size: large;">Task Title : * </label>
+                <input class="form-control" type="text" formControlName="title" [(ngModel)]="task.title">
+                <div class="alert alert-danger mt-2" *ngIf="EditTaskRegisterForm.controls['title'].errors && EditTaskRegisterForm.get('title').touched">
+                    <div *ngIf="EditTaskRegisterForm.controls['title'].hasError('required')">*The task title field is required !</div>
+                    <div *ngIf="EditTaskRegisterForm.controls['title'].hasError('pattern')">* The task title field contains just numeric and alphabetic letters !</div>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label style="font-weight: bolder; font-size: large;">Task Description : * </label>
+                <input class="form-control" type="text" formControlName="description" [(ngModel)]="task.description">
+                <div class="alert alert-danger mt-2" *ngIf="EditTaskRegisterForm.controls['description'].errors && EditTaskRegisterForm.get('description').touched">
+                    * The task description field is required !
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label style="font-weight: bolder; font-size: large;">Task Deadline : * </label>
+                <input class="form-control" type="text" formControlName="deadline" [(ngModel)]="task.deadline">
+                <div class="alert alert-danger mt-2" *ngIf="EditTaskRegisterForm.controls['deadline'].errors && EditTaskRegisterForm.get('deadline').touched">
+                    <div *ngIf="EditTaskRegisterForm.controls['deadline'].hasError('required')">* The task deadline field is required !</div>
+                    <div *ngIf="EditTaskRegisterForm.controls['deadline'].hasError('pattern')">* The task deadline field must be in DD-MM-YYYY format !</div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-success mb-3"  [disabled]="EditTaskRegisterForm.invalid" (click)="editTask()">Edit Task</button>
+            </div>
+        </form>
+    </div>
+</div>

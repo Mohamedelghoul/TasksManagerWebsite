@@ -1,0 +1,84 @@
+<h2 style="text-align: center;">Welcome to <span style="color: #287FE6;">TASKS MANAGER WEBSITE</span> Community </h2>
+<p class="mt-5">
+    Fill out the form to create an account on our site ! 
+    <br> 
+    if the label name containes * it means its a required label !
+</p>
+
+
+<div class="row d-flex justify-content-center my-5">
+    <div class="col-md-6 my-3">
+        <form #f="ngForm">
+            <div class="form-group">
+                <label>User ID :</label>
+                <input type="number" name="id" class="form-control" [disabled]="true" [(ngModel)]="user.id" required>
+            </div>
+        
+            <div class="form-group">
+                <label>Account Username : *</label>
+                <input type="text" name="username" class="form-control" [(ngModel)]="user.username" #username="ngModel" required minlength="4" pattern="[a-zA-Z0-9-_]+">
+                <div class="alert alert-danger" *ngIf="username.touched && username.invalid">
+                    <div *ngIf="username.errors.required">* The username field is required !</div>
+                    <div *ngIf="username.errors.minlength">* The username must contains atleast 4 characters !</div>
+                    <div *ngIf="username.errors.pattern">* Wrog format for the username field ! it must contains just alphabatic & numeric characters & [ _ , - ].</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Account Password : *</label>
+                <input type="password" name="password" class="form-control" [(ngModel)]="user.password" #password="ngModel" required minlength="8">
+                <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+                    <div *ngIf="password.errors.required">* The password field is required !</div>
+                    <div *ngIf="password.errors.minlength">* The password is too weak ! It must be atleast 8 characters.</div>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label>First Name : *</label>
+                <input type="text" name="firstName" class="form-control" [(ngModel)]="user.firstName" #firstName="ngModel" required pattern="[a-zA-Z]+" minlength="4">
+                <div class="alert alert-danger" *ngIf="firstName.touched && firstName.invalid">
+                    <div *ngIf="firstName.errors.required">* The first name field is required !</div>
+                    <div *ngIf="firstName.errors.minlength">* The first name must contains atleast 4 characters !</div>
+                    <div *ngIf="firstName.errors.pattern">* Wrog format for the first name field ! it must contains just alphabatic characters.</div>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label>Last Name : </label>
+                <input type="text" name="lastName" class="form-control" [(ngModel)]="user.lastName">
+            </div>
+        
+            <div class="form-group">
+                <label>Email : *</label>
+                <input type="text" name="email" class="form-control" [(ngModel)]="user.email" #email="ngModel" required pattern="[A-Za-z0-9-_.]+@[A-Za-z0-9]+.[A-Za-z]{2,4}">
+                <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+                    <div *ngIf="email.errors.required">* The email field is required !</div>
+                    <div *ngIf="email.errors.pattern">* Wrong format email !</div>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label>Phone Number :</label>
+                <input type="number" name="phoneNumber" class="form-control" [(ngModel)]="user.phoneNumber" #phoneNumber="ngModel" pattern="[0-9]{8}">
+                <div class="alert alert-danger" *ngIf="phoneNumber.errors && phoneNumber.touched">
+                    * The phone number field must contains 8 numbers !
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label>CIN : *</label>
+                <input type="number" name="cin" class="form-control" [(ngModel)]="user.cin" #cin="ngModel" required pattern="[0-9]{8}">
+                <div class="alert alert-danger" *ngIf="cin.errors && cin.touched">
+                    <div *ngIf="cin.errors.required"> * The cin field is required !</div>
+                    <div *ngIf="cin.errors.pattern"> * The cin field must contains 8 numbers !</div>
+                </div>
+            </div>
+        
+            <div class="text-center">
+                <button type="button" class="btn btn-success" [disabled]="f.invalid" (click)="addUser()">SIGN UP</button>
+            </div>
+            <div class="alert alert-success" *ngIf="userAdded"> You have been successfully signed up.</div>
+            <div class="alert alert-danger" *ngIf="userAdded==false"> There is an error occured while signing up ! please reapeat again later.</div>
+        </form>
+    </div>
+</div>

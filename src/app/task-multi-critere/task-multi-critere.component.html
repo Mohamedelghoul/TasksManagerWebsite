@@ -1,0 +1,28 @@
+<div class="text-center my-5">
+    <button class="btn btn-warning" (click)="showForm()">Show/Hide Multi-Criteria Search</button>
+</div>
+
+
+<div class="row d-flex justify-content-center my-5 text-center" *ngIf="showFormVariable">
+    <div class="col-md-6 my-3">
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="criteriaChosen">
+            <option value="title">Title</option>
+            <option value="deadline">Deadline</option>
+            <option value="status">Status</option>
+        </select>
+        
+        
+      <div class="my-2">
+        <label>Write criteria value : </label>
+        <input type="text" name="criteria" class="form-control" [(ngModel)]="criteria">
+      </div>
+
+
+        <div class="row d-flex justify-content-center my-5">
+            <div class="col-md-6 my-3">
+                <button class="btn btn-success mt-2 mr-2" (click)="search(1)">Search</button>
+                <button class="btn btn-info mt-2" (click)="search(2)">Remove Search</button>
+            </div>
+        </div>
+    </div>
+</div>

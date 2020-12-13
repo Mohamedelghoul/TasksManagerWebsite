@@ -1,0 +1,7 @@
+<div class="card text-center" style="width: 22rem;" [ngStyle]="{'background-color':task.status=='Done'?'lightcoral':''}">
+    <div class="card-body">
+      <h5 class="card-title">Task Title : {{task.title}}</h5>
+      <p class="card-text">Task Deadline : {{task.deadline}}</p>
+      <a [routerLink]="['Detail',task.id]" class="btn btn-info">More Info</a>
+    </div>
+  </div>

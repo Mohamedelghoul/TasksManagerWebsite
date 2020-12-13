@@ -1,0 +1,43 @@
+<div class="text-center my-5">
+    <button class="btn btn-warning" (click)="showForm()">Show/Hide Add Task From</button>
+</div>
+
+
+
+    
+<div class="row d-flex justify-content-center my-5" *ngIf="showFormVariable">
+    <div class="col-md-6 my-3">
+        <form [formGroup]="addTaskRegisterForm">
+            <div class="form-group">
+                <label style="font-weight: bolder; font-size: large;">Task Title : * </label>
+                <input class="form-control" type="text" formControlName="title" [(ngModel)]="task.title">
+                <div class="alert alert-danger mt-2" *ngIf="addTaskRegisterForm.controls['title'].errors && addTaskRegisterForm.get('title').touched">
+                    <div *ngIf="addTaskRegisterForm.controls['title'].hasError('required')">*The task title field is required !</div>
+                    <div *ngIf="addTaskRegisterForm.controls['title'].hasError('pattern')">* The task title field contains just numeric and alphabetic letters !</div>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label style="font-weight: bolder; font-size: large;">Task Description : * </label>
+                <input class="form-control" type="text" formControlName="description" [(ngModel)]="task.description">
+                <div class="alert alert-danger mt-2" *ngIf="addTaskRegisterForm.controls['description'].errors && addTaskRegisterForm.get('description').touched">
+                    * The task description field is required !
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label style="font-weight: bolder; font-size: large;">Task Deadline : * </label>
+                <input class="form-control" type="text" formControlName="deadline" [(ngModel)]="task.deadline">
+                <div class="alert alert-danger mt-2" *ngIf="addTaskRegisterForm.controls['deadline'].errors && addTaskRegisterForm.get('deadline').touched">
+                    <div *ngIf="addTaskRegisterForm.controls['deadline'].hasError('required')">* The task deadline field is required !</div>
+                    <div *ngIf="addTaskRegisterForm.controls['deadline'].hasError('pattern')">* The task deadline field must be in DD-MM-YYYY format !</div>
+                </div>
+            </div>
+        
+            
+            <div class="text-center">
+                <button class="btn btn-success mb-3" (click)="addTask()" [disabled]="addTaskRegisterForm.invalid">Add Task</button>
+            </div>
+        </form>
+    </div>
+</div>

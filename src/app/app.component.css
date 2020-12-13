@@ -1,0 +1,15 @@
+.left{
+    float : left;
+    margin-left: 500px;
+}
+.right{
+    float : right;
+    margin-right: 400px;
+}
+footer{
+    margin-top: 25px;
+}
+.footerimg{
+    width: 25px;
+    margin-right: 5px;
+}
